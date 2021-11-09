@@ -14,7 +14,7 @@ import type { NextPage } from "next";
 import type { Profile } from "../../types/common";
 import type { PostgrestResponse } from "@supabase/supabase-js";
 
-const Search: NextPage = () => {
+const ProfileList: NextPage = () => {
 	const query = useQuery();
 	const { search, currentPage, perPage, totalPages, update } = query;
 
@@ -63,7 +63,7 @@ const Search: NextPage = () => {
 					<Pagination {...query} />
 					<Grid gridGap={2} gridTemplateColumns="repeat(3, 1fr)" gridAutoRows="1fr">
 						{userProfiles.map((profile) => {
-							return <ProfilePreview key={profile.address} profile={profile} />;
+							return <ProfilePreview key={profile.id} profile={profile} />;
 						})}
 					</Grid>
 				</>
@@ -72,4 +72,4 @@ const Search: NextPage = () => {
 	);
 };
 
-export default Search;
+export default ProfileList;

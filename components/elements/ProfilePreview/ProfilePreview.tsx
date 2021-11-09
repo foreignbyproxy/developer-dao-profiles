@@ -1,9 +1,7 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import NextLink from "next/link";
 import { Box, LinkBox, Text, Badge, HStack, Flex, LinkOverlay } from "@chakra-ui/react";
 
-import ProfileMainHeading from "../ProfileMainHeading/ProfileMainHeading";
-import ProfileSubHeading from "../ProfileSubHeading/ProfileSubHeading";
 import TwitterHandle from "../TwitterHandle/TwitterHandle";
 import DiscordName from "../DiscordName/DiscordName";
 import UserENS from "../UserENS/UserENS";
