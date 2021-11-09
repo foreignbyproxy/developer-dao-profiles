@@ -25,11 +25,10 @@ function useSignMessageModal() {
 				<Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
 					<ModalOverlay />
 					<ModalContent>
-						<ModalHeader>Modal Title</ModalHeader>
-						<ModalCloseButton />
+						<ModalHeader mb={0}>Please sign this message to continue</ModalHeader>
 						<ModalBody>
-							<Text>
-								Asking for use to sign message to authenticate their request
+							<Text mb={6}>
+								We need your signature to authenticate your request.
 							</Text>
 							<Checkbox
 								onChange={(e) => setSaveSignature(e.target.checked)}
@@ -60,8 +59,6 @@ function useSignMessageModal() {
 			const signer = provider.getSigner();
 
 			return signer.signMessage(message).then((signature) => {
-				debugger;
-
 				//If the saveSignature checkbox is check then save the signature
 				if(saveSignature) {
 					window.localStorage.setItem("signature", signature);

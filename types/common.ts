@@ -9,7 +9,7 @@ export interface Profile extends ProfileFromSupabase {
 	interestedIn: string[];
 };
 
-export type ProfileLookupKeys = 'ens' | "discord" | "address" | "id";
+export type ProfileLookupKeys = 'ens' | "discord" | "address" | "id" | "signature";
 
 export interface ProfileFormValues {
 	bestWayToContact: string[];

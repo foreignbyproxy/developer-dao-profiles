@@ -34,13 +34,14 @@ const supabase = createClient(
 	process.env.NEXT_PUBLIC_SUPABASE_KEY as string
 );
 
-export function updateUserProfile(address: string, values: ProfileFormValues) {
+export function updateUserProfile(address: string, signature: string, values: ProfileFormValues) {
 	return supabase.from("profiles").upsert(
 		{
 			address,
+			signature,
 			...values,
 		},
-		{ onConflict: "address" }
+		{ onConflict: "signature" }
 	);
 }
 

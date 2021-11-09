@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useContext } from "react";
+import React, { useContext } from "react";
 import { Formik, Form, Field, FieldProps, FormikHelpers } from "formik";
 import {
 	Box,
@@ -88,9 +88,7 @@ function ProfileForm({ address, userProfile }: Props) {
 		});
 
 		if (signature) {
-			window.localStorage.setItem("signature", signature);
-
-			const { error } = await updateUserProfile(address, values);
+			const { error } = await updateUserProfile(address, signature, values);
 
 			//Display error message
 			if (error) {

@@ -202,6 +202,7 @@ export interface paths {
           id?: parameters["rowFilter.profiles.id"];
           address?: parameters["rowFilter.profiles.address"];
           fts?: parameters["rowFilter.profiles.fts"];
+          signature?: parameters["rowFilter.profiles.signature"];
           /** Filtering Columns */
           select?: parameters["select"];
           /** Ordering */
@@ -267,6 +268,7 @@ export interface paths {
           id?: parameters["rowFilter.profiles.id"];
           address?: parameters["rowFilter.profiles.address"];
           fts?: parameters["rowFilter.profiles.fts"];
+          signature?: parameters["rowFilter.profiles.signature"];
         };
         header: {
           /** Preference */
@@ -296,6 +298,7 @@ export interface paths {
           id?: parameters["rowFilter.profiles.id"];
           address?: parameters["rowFilter.profiles.address"];
           fts?: parameters["rowFilter.profiles.fts"];
+          signature?: parameters["rowFilter.profiles.signature"];
         };
         body: {
           /** profiles */
@@ -341,7 +344,7 @@ export interface definitions {
     created_at?: string;
     job_title: string;
     location: string;
-    location_mods?: string;
+    location_mods?: unknown[];
     job_description: string;
     job_mods: string;
     job_skills: string;
@@ -375,10 +378,10 @@ export interface definitions {
     email?: string;
     discord?: string;
     twitter?: string;
-    bestWayToContact?: string[];
+    bestWayToContact?: unknown[];
     ens?: string;
     bio?: string;
-    interestedIn?: string[];
+    interestedIn?: unknown[];
     name?: string;
     /**
      * Note:
@@ -387,6 +390,7 @@ export interface definitions {
     id: number;
     address: string;
     fts?: string;
+    signature?: string;
   };
 }
 
@@ -459,6 +463,7 @@ export interface parameters {
   "rowFilter.profiles.id": string;
   "rowFilter.profiles.address": string;
   "rowFilter.profiles.fts": string;
+  "rowFilter.profiles.signature": string;
 }
 
 export interface operations {}
