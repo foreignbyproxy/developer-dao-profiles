@@ -16,7 +16,7 @@ function Navigation() {
 
 			{wallet ? (
 				<HStack>
-					<NextLink href={"/search"} passHref>
+					<NextLink href={"/profiles"} passHref>
 						<Button as="a">Profiles</Button>
 					</NextLink>
 				</HStack>

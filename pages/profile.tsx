@@ -8,7 +8,7 @@ import {
 import { OnboardContext } from "../components/context/OnboardContext/OnboardContext";
 import ProfileForm from "../components/forms/ProfileForm/ProfileForms";
 
-import { getUserProfile } from "../utils/supabase";
+import { getUserProfileBykey } from "../utils/supabase";
 
 import type { NextPage } from "next";
 import type { Profile } from "../types/common";
@@ -18,7 +18,7 @@ interface ProfileType {
 	hasFetched: boolean;
 }
 
-const ProfilePage: NextPage = () => {
+const UserProfile: NextPage = () => {
 	const { address } = useContext(OnboardContext);
 	const [profileData, setProfileData] = useState<ProfileType>({
 		user: null,
@@ -27,7 +27,7 @@ const ProfilePage: NextPage = () => {
 
 	useEffect(() => {
 		if (address) {
-			getUserProfile(address).then(({ data, error }) => {
+			getUserProfileBykey("address", address).then(({ data, error }) => {
 				if(!error) {
 					setProfileData({
 						user: data,
@@ -49,7 +49,7 @@ const ProfilePage: NextPage = () => {
 				Profiles
 			</Heading>
 
-			{profileData.hasFetched && !!address && (
+			{profileData.hasFetched && address && (
 				<>
 					<Text mb={4}>Complete the following form to help people find you.</Text>
 					<ProfileForm address={address} userProfile={profileData.user} />
@@ -59,4 +59,4 @@ const ProfilePage: NextPage = () => {
 	);
 };
 
-export default ProfilePage;
+export default UserProfile;

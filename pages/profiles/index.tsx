@@ -2,16 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import Head from "next/head";
 import { Heading, Grid } from "@chakra-ui/react";
 
-import { OnboardContext } from "../components/context/OnboardContext/OnboardContext";
-import ProfilePreview from "../components/elements/ProfilePreview/ProfilePreview";
-import Pagination from "../components/elements/Pagination/Pagination";
-import SearchForm from "../components/forms/SearchForm/SearchForm";
+import { OnboardContext } from "../../components/context/OnboardContext/OnboardContext";
+import ProfilePreview from "../../components/elements/ProfilePreview/ProfilePreview";
+import Pagination from "../../components/elements/Pagination/Pagination";
+import SearchForm from "../../components/forms/SearchForm/SearchForm";
 
-import { searchUserProfiles, listUserProfiles } from "../utils/supabase";
-import useQuery from "../utils/useQuery";
+import { searchUserProfiles, listUserProfiles } from "../../utils/supabase";
+import useQuery from "../../utils/useQuery";
 
 import type { NextPage } from "next";
-import type { Profile } from "../types/common";
+import type { Profile } from "../../types/common";
 import type { PostgrestResponse } from "@supabase/supabase-js";
 
 const Search: NextPage = () => {

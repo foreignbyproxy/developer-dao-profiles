@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from "react";
 import Onboard from "bnc-onboard";
 import { useToast } from "@chakra-ui/react";
 
-import { doesAddressOwnToken, signMessage } from "../../../utils/web3";
+import { doesAddressOwnToken } from "../../../utils/web3";
 
 import type { Wallet } from "bnc-onboard/dist/src/interfaces";
 
@@ -112,6 +112,13 @@ export const OnboardProvider = ({ children }: OnboardProviderInterface) => {
 								});
 							} else {
 								onboard.walletReset();
+								toast({
+									title: 'Nope',
+									description: `We can't find a Developer DAO token in your wallet. The token is the only way...`,
+									status: 'error',
+									duration: 5000,
+									isClosable: true,
+								});
 							}
 						}
 					} else {

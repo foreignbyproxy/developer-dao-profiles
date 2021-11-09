@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 	const { onboard, wallet } = useContext(OnboardContext);
 
 	if (wallet) {
-		let destination = "/search";
+		let destination = "/profiles";
 		if (typeof router.query.redirect_to === "string") {
 			destination = router.query.redirect_to;
 		}

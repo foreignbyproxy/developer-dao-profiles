@@ -28,7 +28,7 @@ function UserDropdown() {
 			</MenuButton>
 			<MenuList py={0} mt={2} borderRadius={0}>
 				<NextLink href={"/profile"} passHref>
-					<MenuItem as="a">Profile</MenuItem>
+					<MenuItem as="a">Your Profile</MenuItem>
 				</NextLink>
 				<MenuItem onClick={onboard.walletReset}>Disconnect</MenuItem>
 			</MenuList>
