@@ -9,16 +9,18 @@ export function formatShortAddress(address: string) {
 }
 
 export function getDDContract() {
-	const provider = getDefaultProvider();
+	const provider = getDefaultProvider("homestead", {
+		infura: process.env.NEXT_PUBLIC_INFURA_KEY
+	});
+
 	const contract = new ethers.Contract(DD_CONTRACT_ADDRESS, ddContractABI, provider);
 
 	return contract;
 }
 
 export async function doesAddressOwnToken(address: string) {
-	const contract = getDDContract();
-
 	try {
+		const contract = getDDContract();
 
 		const results = await contract.tokenOfOwnerByIndex(address, 0);
 

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useMemo } from "react";
+import React, { useMemo } from "react";
 import makeBlockie from "ethereum-blockies-base64";
 import { Flex, Box, Image, Text } from "@chakra-ui/react";
 
