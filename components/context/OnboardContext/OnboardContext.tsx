@@ -133,12 +133,13 @@ export const OnboardProvider = ({ children }: OnboardProviderInterface) => {
 					{
 						walletName: "ledger",
 						rpcUrl: process.env.NEXT_PUBLIC_RPC_URL,
+						preferred: true
 					},
 					{
 						walletName: "walletConnect",
 						infuraKey: process.env.NEXT_PUBLIC_INFURA_KEY,
-					},
-					{ walletName: "gnosis" },
+						preferred: true
+					}
 				],
 			},
 			walletCheck: [
