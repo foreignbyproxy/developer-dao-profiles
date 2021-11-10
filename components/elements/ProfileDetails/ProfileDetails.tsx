@@ -17,33 +17,33 @@ function ProfileDetails({ profile }: Props) {
 			<ProfileMainHeading profile={profile} />
 			<ProfileSubHeading profile={profile} />
 
-			<Box my={2}>
+			<Box my={4}>
 				{profile.name && <DiscordName handle={profile.discord} />}
 				{(profile.name || profile.discord) && <TwitterHandle handle={profile.twitter} />}
 				{profile.ens && <UserENS ens={profile.ens} />}
 			</Box>
 
 			{profile.discipline && (
-				<Text>
+				<Text my={4}>
 					<strong>Discipline</strong>: {profile.discipline}
 				</Text>
 			)}
 
-			{profile.discipline && (
-				<Box mt={4}>
+			{profile.bio && (
+				<Box my={4} maxW="80ch">
 					<Heading size="sm">Bio</Heading>
 					{profile.bio}
 				</Box>
 			)}
 
-			{!!profile.bestWayToContact.length && (
-				<Text mt={4}>
+			{profile.bestWayToContact && !!profile.bestWayToContact.length && (
+				<Text my={4}>
 					<strong>Best Way to Contact</strong>: {profile.bestWayToContact.join(", ")}
 				</Text>
 			)}
 
-			{!!profile?.interestedIn?.length && (
-				<HStack mt="auto">
+			{profile.interestedIn && !!profile.interestedIn.length && (
+				<HStack my={4}>
 					{profile.interestedIn.map((val) => {
 						return (
 							<Badge key={val} p={2} borderRadius="10px">
