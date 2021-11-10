@@ -24,9 +24,6 @@ export default function Layout({
 	if (isPrivate && !wallet) {
 		router.push({
 			pathname: "/",
-			query: {
-				redirect_to: router.pathname,
-			},
 		});
 		return null;
 	}
